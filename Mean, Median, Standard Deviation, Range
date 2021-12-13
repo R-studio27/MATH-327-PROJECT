@@ -1,0 +1,34 @@
+View(Family_Violence)
+# If I want to see a complete information, in Rstudio I can only Press summaryand it would helpme to visualize my Data information
+summary(Family_Violence)
+# compute the median 
+median(Family_Violence$FAM_Fel_Assault)
+median(Family_Violence$DV_Fel_Assault)
+median(Family_Violence$FAM_Rape)
+median(Family_Violence$DV_Rape)
+# compute the mean 
+mean(Family_Violence$FAM_Fel_Assault)
+mean(Family_Violence$DV_Fel_Assault)
+mean(Family_Violence$FAM_Rape)
+mean(Family_Violence$DV_Rape)
+mean(COVID_19_Daily_Counts$CASE_COUNT)
+# Compute the sample variance
+var(Family_Violence$FAM_Fel_Assault)
+var(Family_Violence$DV_Fel_Assault)
+var(Family_Violence$FAM_Rape)
+var(Family_Violence$DV_Rape)
+# Compute the sample standard deviation 
+sd(Family_Violence$FAM_Fel_Assault)
+sd(Family_Violence$DV_Fel_Assault)
+sd(Family_Violence$FAM_Rape)
+sd(Family_Violence$DV_Rape)
+# Compute the range (given as an interval)
+range(Family_Violence$FAM_Fel_Assault)
+range(Family_Violence$DV_Fel_Assault)
+range(Family_Violence$FAM_Rape)
+range(Family_Violence$DV_Rape)
+# Compute the inter-quartile range 
+IQR(Family_Violence$FAM_Fel_Assault)
+IQR(Family_Violence$DV_Fel_Assault)
+IQR(Family_Violence$FAM_Rape)
+IQR(Family_Violence$DV_Rape)
