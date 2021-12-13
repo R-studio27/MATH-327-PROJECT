@@ -1,0 +1,30 @@
+View"Family_Violence"
+# display the contents of Family_Violence
+# display only the column FAM_DIR in Family_Violence
+Family_Violence$FAM_DIR
+# plot the data in the FAM_DIR
+plot(Family_Violence$FAM_DIR)
+# plot the data in the Bronx column as a continuous line (line graph)
+plot(Family_Violence$FAM_DIR, type = "l")
+# same as previous plot, but line is blue
+plot(Family_Violence$FAM_Fel_Assault, type = "l", col = "blue")
+# same as previous plot but x axis is labeled by the FAM Fel Assault (from the data)
+plot(Family_Violence$FAM_DIR, Family_Violence$FAM_Fel_Assault, type = "l")
+# Display the data in the DV Rape count column ()
+Family_Violence$DV_Rape
+# Make a histogram of the DV Rape
+hist(Family_Violence$DV_Rape)
+# Make a bar plot of the 
+barplot(table(Family_Violence$DV_Rape))
+# plot a histogram of the felony assaults that involve domestic violence
+hist(Family_Violence$DV_Fel_Assault)
+# plot a histogram of  Felony Assaults and Felony Rape data with a title, x axis label, and y axis label
+plot(Family_Violence$DV_Fel_Assault,Family_Violence$DV_Rape, main = "Felony Assaults and Felony Rape", xlab = "Felony Assaults", ylab = "Felony Rape")
+# Barplot of the Felony Assaults
+barplot(table(Family_Violence$DV_Fel_Assault, main  = "Felony Assaults", ylab = "Frequency", xlab = "Felony Assaults")
+# plot a histogram of the felony assaults that involve domestic and family feliny assaults.
+plot(Family_Violence$DV_Fel_Assault,Family_Violence$FAM_Fel_Assault, main = "Domestic and Family Felony Assaults", xlab = "Domestic Violence Felony Assault",ylab="Family Felony Assault")
+# plot a histogram of the felony assaults that involve family and domestic rape
+plot(Family_Violence$DV_FAM_Rape,Family_Violence$DV_Rape,main = "Family and Domestic Rape", xlab "Family Rape", ylab = "Dmestic Violence Rape")
+# plot a histogram of the family felony assault and rape
+plot(Family_Violence$Fam_Fel_Assault,Family_Violence$Fam_Rape,main = "Family Felony Assaults and Rape", xlab = "Family Felony Assault", ylab = "Family Rape")
