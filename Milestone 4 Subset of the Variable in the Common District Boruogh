@@ -1,0 +1,58 @@
+commondistrict<-FV$Comm_District
+commondistrict
+ [1] "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "BXJIA"   "Unknown" "Total"   "1"      
+[17] "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "13"      "14"      "15"      "16"      "17"     
+ [33] "18"      "BKJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"     
+ [49] "MNJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "13"     
+ [65] "14"      "QNJIA"   "Unknown" "Total"   "1"       "2"       "3"       "SIJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"      
+ [81] "7"       "8"       "9"       "10"      "11"      "12"      "BXJIA"   "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"      
+ [97] "9"       "10"      "11"      "12"      "13"      "14"      "15"      "16"      "17"      "18"      "BKJIA"   "Total"   "1"       "2"       "3"       "4"      
+[113] "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "MNJIA"   "Total"   "1"       "2"       "3"       "4"       "5"       "6"      
+[129] "7"       "8"       "9"       "10"      "11"      "12"      "13"      "14"      "QNJIA"   "Total"   "1"       "2"       "3"       "SIJIA"   "Total"   "1"      
+[145] "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "BXJIA"   "Unknown" "Total"   "1"       "2"      
+[161] "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "13"      "14"      "15"      "16"      "17"      "18"     
+[177] "BKJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "MNJIA"  
+[193] "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "13"      "14"     
+[209] "QNJIA"   "Unknown" "Total"   "1"       "2"       "3"       "SIJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"      
+[225] "8"       "9"       "10"      "11"      "12"      "BXJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"       "5"       "6"       "7"       "8"      
+[241] "9"       "10"      "11"      "12"      "13"      "14"      "15"      "16"      "17"      "18"      "BKJIA"   "Unknown" "Total"   "1"       "2"       "3"      
+[257] "4"       "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "MNJIA"   "Unknown" "Total"   "1"       "2"       "3"       "4"      
+[273] "5"       "6"       "7"       "8"       "9"       "10"      "11"      "12"      "13"      "14"      "QNJIA"   "Unknown" "Total"   "1"       "2"       "3"      
+[289] "SIJIA"   "Unknown" "Total"  
+ three<-commondistrict=="3"
+three
+  [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [29] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+ [57] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [85] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+[113] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[141]  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[169] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[197]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[225] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[253] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[281] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+ t=mean(three)
+ t
+#[1] 0.06872852
+ t_hat=mean(three)
+ t_hat
+#[1] 0.06872852
+ sum(three)
+[1] 20
+nrow(FV)
+#[1] 291
+#Assume that the value p=0.112, Using Propootion test we going to calculate if is less or more that our assmption.
+prop.test(sum(three),nrow(FV),p=0.112)
+
+	1-sample proportions test with continuity correction
+
+data:  sum(three) out of nrow(FV), null probability 0.112
+X-squared = 5.0521, df = 1, p-value = 0.0246
+alternative hypothesis: true p is not equal to 0.112
+95 percent confidence interval:
+ 0.04355889 0.10578399
+sample estimates:
+         p 
+0.06872852 
+#base in the information collected we conclude that we not reject seems that 0.06 p value is greater than 0.05
