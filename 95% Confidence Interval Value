@@ -1,0 +1,27 @@
+ # Compute the 95% confidence interval for the mean
+ # but with a better format
+ x_bar1=mean(FV$FAM_Fel_Assault)
+ s = sd(FV$FAM_Fel_Assault)
+ c(x_bar1 - qt(0.975, df = n-1) * s / sqrt(n),
+ x_bar1 + qt(0.975, df = n-1) * s / sqrt(n))
+
+  # Compute the 95% confidence interval for the mean
+ # but with a better format
+ x_bar2=mean(FV$DV_Fel_Assault)
+ s = sd(FV$DV_Fel_Assault)
+ c(x_bar2 - qt(0.975, df = n-1) * s / sqrt(n),
+ x_bar2 + qt(0.975, df = n-1) * s / sqrt(n))
+
+  # Compute the 95% confidence interval for the mean
+ # but with a better format
+ x_bar3=mean(FV$FAM_Rape)
+ s = sd(FV$FAM_Rape)
+ c(x_bar3 - qt(0.975, df = n-1) * s / sqrt(n),
+ x_bar3 + qt(0.975, df = n-1) * s / sqrt(n))
+
+  # Compute the 95% confidence interval for the mean
+ # but with a better format
+ x_bar4=mean(FV$DV_Rape)
+ s = sd(FV$DV_Rape)
+ c(x_bar4 - qt(0.975, df = n-1) * s / sqrt(n),
+ x_bar4 + qt(0.975, df = n-1) * s / sqrt(n))
