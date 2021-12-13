@@ -1,0 +1,19 @@
+hist(Family_Violence$FAM_Fel_Assault, main= "Family- Related Felony Assault",xlab="Felony Assaults", border="blue",col="red")
+hist(Family_Violence$FAM_Rape, main= "Family-Related Rapes ",xlab="Related Rapes", border="blue",col="red")
+hist(Family_Violence$DV_Rape, main= "Domestic Violation Related Rapes ",xlab="Related Rapes", border="blue",col="red")
+hist(Family_Violence$DV_Fel_Assault, main= "histogram for Domestic Violation of Felony Assault",xlab="Felony Assaults", border="blue",col="red")
+
+table(FV$Comm_Dist_.Boro)
+
+    #    Bronx      Brooklyn     Manhattan        Queens Staten Island 
+    #       62            80            59            67            23 
+ table(FV$Comm_Dist_.Boro)/nrow(mpg)
+
+       # Bronx      Brooklyn     Manhattan        Queens Staten Island 
+   # 0.2649573     0.3418803     0.2521368     0.2863248     0.0982906 
+ barplot(table(FV$Comm_Dist_.Boro),
+         xlab   = "Borugh",
+        ylab   = "Frequency",
+         main   = "Borough of NYC",
+         col    = "dodgerblue",
+        border = "darkorange")
