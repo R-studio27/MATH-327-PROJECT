@@ -1,0 +1,7 @@
+#plot using a categoricalvariable with a quatitative vailable
+plot(Report_Year~FAM_DIR, data = FV,xlab = "Number Of Domestic VIolence Incident Reports",
+      ylab = "Report Year  (2017-2018-2019-2020)",
+     main = "Number of Domestic Violence Incident whith the Report Year",
+      pch  = 20,
+      cex  = 5,
+     col  = "dodgerblue")
