@@ -1,0 +1,26 @@
+# Create a boxplot of the data 
+boxplot(FV$DV_Rape)
+
+# Same boxplot as above, but horizontal with title and x axis label
+boxplot(FV$DV_Rape, horizontal = TRUE, 
+        main = "Family Rape in NY",
+        xlab = "Domestic Violence Rape", main= "Family and Domestic Rape")
+#For categorical variables, counts and percentages can be used for summary.
+
+table(FV$DV_Rape)
+
+table(FV$DV_Rape) / nrow(FV)
+unique(FV$DV_Rape)
+# Compute the 95% confidence interval for the mean
+c(x_bar - qt(0.975, df = n-1) * s / sqrt(n),  x_bar + qt(0.975, df = n-1) * s / sqrt(n))
+# Get the number of cases, count the number of rows using nrow() or NROW():n = nrow(hour)
+# Compute the 95% confidence interval for the mean
+c(mean(FV$DV_Rape) - qt(0.975, df = nrow(DV_Rape)-1) * sd(FV$DV_Rape) / sqrt(nrow(DV_Rape)),  mean(FV$DV_Rape) + qt(0.975, df = nrow(FV)-1) * sd(FV$DV_Rape) / sqrt(nrow(DV_Rape)))
+boxplot(FAM_Rape~DV_Rape, data = FV,
+     xlab   = "Family Rape",
+     ylab   = "Domestic Violation Rape",
+     main   = "Family Vs Domestic Rape",
+     pch    = 20,
+     cex    = 2,
+     col    = "darkorange",
+     border = "dodgerblue")
