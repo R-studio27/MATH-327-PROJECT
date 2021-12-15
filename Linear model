@@ -1,0 +1,48 @@
+
+x =Family_Violence$DV_Rape 
+ y = Family_Violence$FAM_Rape
+
+ Sxy = sum((x - mean(x)) * (y - mean(y)))
+ Sxx = sum((x - mean(x)) ^ 2)
+ Syy = sum((y - mean(y)) ^ 2)
+ c(Sxy, Sxx, Syy)
+
+  # slope, b
+  beta_1_hat = Sxy / Sxx
+  # intercept, a-b*mean(x)
+  beta_0_hat = mean(y) - beta_1_hat * mean(x) 
+  c(beta_0_hat, beta_1_hat)
+
+  # find predicted response for x=8
+  x_hat = 8
+  y_hat = beta_0_hat + beta_1_hat * x_hat
+
+  #fit linear models, lm() function
+  # Call:
+  # lm(formula = DV_Rape ~ FAM_Rape, data = Family_Violence)
+  # 
+  # Coefficients:
+  # (Intercept)        speed  
+
+  stop_dist_model = lm( DV_Rape ~ FAM_Rape, data = Family_Violence)
+  coef(stop_dist_model)
+(Intercept)    FAM_Rape 
+  0.9202773   2.6266106 
+ plot( DV_Rape ~ FAM_Rape, data = Family_Violence,
+      xlab = "Domestic Violation Rape",
+      ylab = "FAM_Rape",
+      main = "Domestic and Family Rape",
+      pch  = 20,library(mlbench)
+     library(dplyr)
+library(ggplot2)
+library(reshape2)
+data("Family_Violence")
+     cex  = 2,
+     col  = "grey")
+abline(stop_dist_model, lwd = 1, col = "orange")
+
+# Sum of square errors
+SST   = sum((y - mean(y)) ^ 2)
+SSReg = sum((y_hat - mean(y)) ^ 2)
+SSE   = sum((y - y_hat) ^ 2)
+c(SST = SST, SSReg = SSReg, SSE = SSE)
