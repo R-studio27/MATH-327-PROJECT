@@ -1,0 +1,76 @@
+FV<-read.csv("2017_Family_Violence_Related_Snapshots__New_York_City_Community_Board_Districts (1).csv")
+	FV
+
+#finding values for the mu and sigma for the Fam felony Variable
+	mu_hat1 = mean(FV$FAM_Fel_Assault)
+	sigma_hat1=sd(FV$FAM_Fel_Assault)
+	n=nrow(FV)
+  U=mu_hat1 + critical_value*sigma_hat1/sqrt(n)
+	U
+	U=mu_hat1 - critical_value*sigma_hat1/sqrt(n)
+	L=mu_hat1 - critical_value*sigma_hat1/sqrt(n)
+	L
+
+#finding values for the mu and sigma for the DV Fel Variable
+	mu_hat2=mean(FV$DV_Fel_Assault)
+	sigma_hat2=sd(FV$DV_Fel_Assault)
+	n=nrow(FV)
+	U2=mu_hat2 + critical_value*sigma_hat2/sqrt(n)
+	U2
+	L2=mu_hat2 - critical_value*sigma_hat2/sqrt(n)
+	L2
+
+#finding values for the mu and sigma for the Fam RapeVariable
+	mu_hat3 = mean(FV$FAM_Rape)
+	sigma_hat3=sd(FV$FAM_Rape)
+	n=nrow(FV)
+	U3=mu_hat3 + critical_value*sigma_hat3/sqrt(n)
+	U3
+	L3=mu_hat3 - critical_value*sigma_hat3/sqrt(n)
+	L3
+
+#finding values for the mu and sigma for the DV Rape Variable
+  mu_hat4 = mean(FV$DV_Rape)
+	sigma_hat4=sd(FV$DV_Rape)
+	n=nrow(FV)
+	U4=mu_hat4 + critical_value*sigma_hat4/sqrt(n)
+	U4
+	L4=mu_hat4 - critical_value*sigma_hat4/sqrt(n)
+	L4
+
+
+
+  # create data from one-way ANOVA model with four groups of equal size
+  # response simulated from normal with group mean, shared variance
+  # group variable indicates group A, B, C or D
+  sim_data = data.frame(
+    response = c(rnorm(n = n, mean_hat1 = mu_a, sd = sigma_hat1),
+                 rnorm(n = n, mean_hat2 = mu_b, sd = sigma_hat2),
+                 rnorm(n = n, mean_hat3 = mu_c, sd = sigma_hat3),
+                 rnorm(n = n, mean_hat4 = mu_d, sd = sigma_hat4)),
+    group = c(rep("A", times = n), rep("B", times = n), 
+              rep("C", times = n), rep("D", times = n))
+    )
+
+boxplot(response~group, data = sim_data)
+sim_aov = aov(response ~ group, data = sim_data)
+sim_aov
+summary(sim_aov)
+
+
+
+#For My Second Hypothesis
+install.packages("faraway")
+library(faraway)
+# load the data  
+# coagulation dataset from the faraway package. Here four different diets (A, B, C, D) were 
+# administered to a random sample of 24 animals. The subjects were randomly assigned to one 
+# of the four diets. For each, their blood coagulation time was measured in seconds.
+names(FV)
+# create the relevant boxplot
+plot(FAM_Rape ~ DV_Rape, data = FV, col = 2:5)
+# use aov() function to obtain the relevant sums of squares
+coag_aov = aov(FAM_Rape ~ DV_Rape, data = FV)
+coag_aov
+# use the summary() function on the output from aov() creates the desired ANOVA table.
+summary(coag_aov)
